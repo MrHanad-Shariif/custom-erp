@@ -97,15 +97,7 @@ const rolesWithPermissionsDisplay = computed(() =>
   })
 )
 
-const rolesWithPermissionsDisplay = computed(() => {
-  const list = roles.value as Record<string, unknown>[]
-  const permList = permissions.value as { id: string; action: string }[]
-  return list.map((row) => {
-    const permIds = (row.permission_ids as string[]) || []
-    row.permissions_display = permIds.map((id) => permList.find((p) => p.id === id)?.action ?? id).join(', ') || '—'
-    return row
-  })
-})
+
 
 const filteredRoles = computed(() => {
   const q = searchQuery.value.trim().toLowerCase()

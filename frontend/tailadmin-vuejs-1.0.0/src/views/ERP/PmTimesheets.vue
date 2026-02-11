@@ -18,14 +18,14 @@
         <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Employee *</label>
         <select v-model="form.employee_id" class="input-erp" required>
           <option value="">Select employee</option>
-          <option v-for="e in employees" :key="e.id" :value="e.id">{{ (e as Record<string, unknown>).full_name }} ({{ (e as Record<string, unknown>).employee_code }})</option>
+          <option v-for="e in employees" :key="String((e as Record<string, unknown>).id)" :value="(e as Record<string, unknown>).id">{{ (e as Record<string, unknown>).full_name }} ({{ (e as Record<string, unknown>).employee_code }})</option>
         </select>
       </div>
       <div>
         <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Task *</label>
         <select v-model="form.task_id" class="input-erp" required>
           <option value="">Select task</option>
-          <option v-for="t in tasks" :key="t.id" :value="t.id">{{ (t as Record<string, unknown>).name }}</option>
+          <option v-for="t in tasks" :key="String((t as Record<string, unknown>).id)" :value="(t as Record<string, unknown>).id">{{ (t as Record<string, unknown>).name }}</option>
         </select>
       </div>
       <div>

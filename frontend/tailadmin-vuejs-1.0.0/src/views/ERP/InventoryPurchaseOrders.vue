@@ -23,7 +23,7 @@
         <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Warehouse *</label>
         <select v-model="form.warehouse_id" class="input-erp" required>
           <option value="">Select warehouse</option>
-          <option v-for="w in warehouses" :key="w.id" :value="w.id">{{ (w as Record<string, unknown>).name }} ({{ (w as Record<string, unknown>).code }})</option>
+          <option v-for="w in warehouses" :key="String((w as Record<string, unknown>).id)" :value="(w as Record<string, unknown>).id">{{ (w as Record<string, unknown>).name }} ({{ (w as Record<string, unknown>).code }})</option>
         </select>
       </div>
       <div>

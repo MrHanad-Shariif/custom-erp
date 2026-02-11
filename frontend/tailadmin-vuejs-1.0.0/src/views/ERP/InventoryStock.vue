@@ -19,14 +19,14 @@
         <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Warehouse *</label>
         <select v-model="form.warehouse_id" class="input-erp" required>
           <option value="">Select warehouse</option>
-          <option v-for="w in warehouses" :key="w.id" :value="w.id">{{ w.name }} ({{ w.code }})</option>
+          <option v-for="w in warehouses" :key="String(w.id)" :value="w.id">{{ w.name }} ({{ w.code }})</option>
         </select>
       </div>
       <div>
         <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">SKU *</label>
         <select v-model="form.sku_id" class="input-erp" required>
           <option value="">Select SKU</option>
-          <option v-for="s in skus" :key="s.id" :value="s.id">{{ s.name }} ({{ s.code }})</option>
+          <option v-for="s in skus" :key="String(s.id)" :value="s.id">{{ s.name }} ({{ s.code }})</option>
         </select>
       </div>
       <ErpFormField v-model="form.quantity" label="Quantity" type="number" required />

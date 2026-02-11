@@ -39,7 +39,7 @@
         <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Customer</label>
         <select v-model="form.customer_id" class="input-erp">
           <option value="">— None —</option>
-          <option v-for="c in customers" :key="c.id" :value="c.id">{{ (c as Record<string, unknown>).name }} ({{ (c as Record<string, unknown>).code }})</option>
+          <option v-for="c in customers" :key="String((c as Record<string, unknown>).id)" :value="(c as Record<string, unknown>).id">{{ (c as Record<string, unknown>).name }} ({{ (c as Record<string, unknown>).code }})</option>
         </select>
       </div>
     </ErpFormModal>

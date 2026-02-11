@@ -15,7 +15,7 @@
         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
           <tr
             v-for="(row, index) in data"
-            :key="row.id || index"
+            :key="String((row as Record<string, unknown>).id ?? index)"
             class="border-t border-gray-100 dark:border-gray-800"
           >
             <td v-for="col in columns" :key="col.key" class="px-4 py-3 sm:px-5">

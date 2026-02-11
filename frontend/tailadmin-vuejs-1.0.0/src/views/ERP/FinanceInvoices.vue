@@ -18,14 +18,14 @@
         <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Customer *</label>
         <select v-model="form.customer_id" class="input-erp" required>
           <option value="">Select customer</option>
-          <option v-for="c in customers" :key="c.id" :value="c.id">{{ (c as Record<string, unknown>).name }} ({{ (c as Record<string, unknown>).code }})</option>
+          <option v-for="c in customers" :key="String((c as Record<string, unknown>).id)" :value="(c as Record<string, unknown>).id">{{ (c as Record<string, unknown>).name }} ({{ (c as Record<string, unknown>).code }})</option>
         </select>
       </div>
       <div>
         <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Project</label>
         <select v-model="form.project_id" class="input-erp">
           <option value="">— None —</option>
-          <option v-for="p in projects" :key="p.id" :value="p.id">{{ (p as Record<string, unknown>).name }}</option>
+          <option v-for="p in projects" :key="String((p as Record<string, unknown>).id)" :value="(p as Record<string, unknown>).id">{{ (p as Record<string, unknown>).name }}</option>
         </select>
       </div>
       <ErpFormField v-model="form.amount" label="Amount" type="number" required />

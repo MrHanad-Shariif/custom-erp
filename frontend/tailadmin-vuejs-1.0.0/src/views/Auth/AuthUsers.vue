@@ -34,7 +34,7 @@
       <div>
         <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">Roles</label>
         <div class="max-h-48 space-y-2 overflow-y-auto rounded-lg border border-gray-200 p-3 dark:border-gray-700">
-          <label v-for="r in roles" :key="r.id" class="flex items-center gap-2">
+          <label v-for="r in roles" :key="String((r as Record<string, unknown>).id)" class="flex items-center gap-2">
             <input v-model="form.role_ids" type="checkbox" :value="(r as Record<string, unknown>).id" class="rounded border-gray-300" />
             <span class="text-sm text-gray-700 dark:text-gray-300">{{ (r as Record<string, unknown>).name }}</span>
           </label>
