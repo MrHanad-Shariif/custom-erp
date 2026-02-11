@@ -72,5 +72,7 @@ def create_app(config_name=None):
     with app.app_context():
         from app.seed_permissions import seed_permissions
         seed_permissions()
+        from flask_migrate import upgrade
+        upgrade()
 
     return app
