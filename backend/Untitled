@@ -1,0 +1,4 @@
+FLASK_ENV=development
+SECRET_KEY=your-secret-key
+JWT_SECRET_KEY=your-jwt-secret
+DATABASE_URL=postgresql://postgres:admin1212@localhost:5432/erp_db
